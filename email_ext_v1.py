@@ -84,3 +84,5 @@ st.write("Location: ", location(final_clean_data))
 
 st.write("Vendor: ", vendor(subject_data))
 st.write("Stuatus: ", status(subject_data))
+
+st.write("Body: ", body_data)
