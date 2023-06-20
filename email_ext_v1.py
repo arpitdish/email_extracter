@@ -52,9 +52,8 @@ def location(text):
 def vendor(sub_text):
 	pattern= r'Castle'
 	match=re.search(pattern,sub)
-
 	if match:
-		ven='Crown Castle Fiber'
+		ven="Crown Castle Fiber"
     	return ven
 	else:
     	return "No match found" 
