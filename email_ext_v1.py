@@ -8,7 +8,7 @@ subject_data = st.text_input("Enter the Subject of the Email")
 body_data = st.text_input("Enter the Body of the Email")
 
 def cleaning_data(data):
-	cleaning_review= re.sub('[^a-zA-Z0-9/:]',' ',data)
+	cleaning_review= re.sub('[^a-zA-Z0-9/:]',' ',str(data))
 	return cleaning_review
 
 
@@ -72,16 +72,16 @@ def status(sub_text):
 
 final_clean_data= cleaning_data(body_data)
 
-try:
-	print("Ticket Number: ", ticket_no(final_clean_data))
-	print("Start Date: ", date_and_time(final_clean_data)[0])
-	print("Start Time: ", date_and_time(final_clean_data)[1])
-	print("End Date: ", date_and_time(final_clean_data)[2])
-	print("End Time: ", date_and_time(final_clean_data)[3])
-	print("Location: ", location(final_clean_data))
 
-	print("Vendor: ", vendor(subject_data))
-	print("Stuatus: ", status(subject_data))
+print("Ticket Number: ", ticket_no(final_clean_data))
+print("Start Date: ", date_and_time(final_clean_data)[0])
+print("Start Time: ", date_and_time(final_clean_data)[1])
+print("End Date: ", date_and_time(final_clean_data)[2])
+print("End Time: ", date_and_time(final_clean_data)[3])
+print("Location: ", location(final_clean_data))
+
+print("Vendor: ", vendor(subject_data))
+print("Stuatus: ", status(subject_data))
 
 except:
 	pass
