@@ -53,8 +53,7 @@ def vendor(sub_text):
 	pattern= r'Castle'
 	match=re.search(pattern,sub)
 	if match:
-		ven="Crown Castle Fiber"
-    	return ven
+		return "Crown Castle Fiber"
 	else:
     	return "No match found" 
 
