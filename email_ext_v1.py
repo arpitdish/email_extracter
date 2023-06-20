@@ -6,8 +6,9 @@ subject_data = st.text_input("Enter the Subject of the Email")
 
 body_data = st.text_area("Enter the Body of the Email")
 
-
-cleaning_review= re.sub('[^a-zA-Z0-9/:]',' ',body_data)
+def cleaning_data(data):
+	cleaning_review= re.sub('[^a-zA-Z0-9/:]',' ',data)
+	return cleaning_review
 
 
 
@@ -39,7 +40,7 @@ def date_and_time(text):
 
 def location(text):
 	pattern = r'Location of Work:  (\w+\s?\w+)'
-	match = re.search(pattern, cleaning_review)
+	match = re.search(pattern, text)
 
 	if match:
 	    location_of_work = match.group(1)
@@ -51,7 +52,7 @@ def location(text):
 
 def vendor(sub_text):
 	pattern= r'Castle'
-	match=re.search(pattern,sub)
+	match=re.search(pattern,sub_text)
 	if match:
 		return "Crown Castle Fiber"
 	else:
@@ -60,7 +61,7 @@ def vendor(sub_text):
 
 def status(sub_text):
 	pattern = r'Event (\w+\s?\w+)'
-	match = re.search(pattern, xx)
+	match = re.search(pattern, sub_text)
 
 	if match:
 		event_state=match.group(0)
@@ -69,14 +70,14 @@ def status(sub_text):
 	    return "No match found"
 
 
+final_clean_data= cleaning_data(body_data)
 
-
-print("Ticket Number: ", ticket_no(body_data))
-print("Start Date: ", date_and_time(body_data)[0])
-print("Start Time: ", date_and_time(body_data)[1])
-print("End Date: ", date_and_time(body_data)[2])
-print("End Time: ", date_and_time(body_data)[3])
-print("Location: ", location(body_data))
+print("Ticket Number: ", ticket_no(final_clean_data))
+print("Start Date: ", date_and_time(final_clean_data)[0])
+print("Start Time: ", date_and_time(final_clean_data)[1])
+print("End Date: ", date_and_time(final_clean_data)[2])
+print("End Time: ", date_and_time(final_clean_data)[3])
+print("Location: ", location(final_clean_data))
 
 print("Vendor: ", vendor(subject_data))
 print("Stuatus: ", status(subject_data))
