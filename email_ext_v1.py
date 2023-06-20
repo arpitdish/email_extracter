@@ -82,6 +82,3 @@ print("Location: ", location(final_clean_data))
 
 print("Vendor: ", vendor(subject_data))
 print("Stuatus: ", status(subject_data))
-
-except:
-	pass
