@@ -2,9 +2,9 @@ import pandas as pd
 import re
 
 
-subject_data = st.text_area("Enter the Subject of the Email")
+subject_data = st.text_input("Enter the Subject of the Email")
 
-body_data = st.text_area("Enter the Body of the Email")
+body_data = st.text_input("Enter the Body of the Email")
 
 def cleaning_data(data):
 	cleaning_review= re.sub('[^a-zA-Z0-9/:]',' ',data)
