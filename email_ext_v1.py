@@ -55,7 +55,8 @@ def vendor(sub_text):
 	match=re.search(pattern,sub_text)
 	if match:
 		return "Crown Castle Fiber"
-    return "No match found"
+	else:
+	    return "No match found"
 
 
 def status(sub_text):
