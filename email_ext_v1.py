@@ -73,12 +73,12 @@ def status(sub_text):
 final_clean_data= cleaning_data(body_data)
 
 
-print("Ticket Number: ", ticket_no(final_clean_data))
-print("Start Date: ", date_and_time(final_clean_data)[0])
-print("Start Time: ", date_and_time(final_clean_data)[1])
-print("End Date: ", date_and_time(final_clean_data)[2])
-print("End Time: ", date_and_time(final_clean_data)[3])
-print("Location: ", location(final_clean_data))
+st.write("Ticket Number: ", ticket_no(final_clean_data))
+st.write("Start Date: ", date_and_time(final_clean_data)[0])
+st.write("Start Time: ", date_and_time(final_clean_data)[1])
+st.write("End Date: ", date_and_time(final_clean_data)[2])
+st.write("End Time: ", date_and_time(final_clean_data)[3])
+st.write("Location: ", location(final_clean_data))
 
-print("Vendor: ", vendor(subject_data))
-print("Stuatus: ", status(subject_data))
+st.write("Vendor: ", vendor(subject_data))
+st.write("Stuatus: ", status(subject_data))
