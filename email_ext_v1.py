@@ -64,8 +64,7 @@ def status(sub_text):
 	match = re.search(pattern, sub_text)
 
 	if match:
-		event_state=match.group(0)
-	    return event_state
+	    return match.group(0)
 	else:
 	    return "No match found"
 
